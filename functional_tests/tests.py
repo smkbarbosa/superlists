@@ -7,6 +7,7 @@ import unittest
 
 MAX_WAIT = 10
 
+
 class NewVisitorTest(LiveServerTestCase):
 	
 	def setUp(self):
@@ -126,7 +127,7 @@ class NewVisitorTest(LiveServerTestCase):
 
 		# Satisfeita, ela volta a dormir
 
-	def test_multiple_users_can_start_lists_at_dufferent_urls(self):
+	def test_multiple_users_can_start_lists_at_different_urls(self):
 		# Edith inicia uma nova lista de tarefas
 		self.browser.get(self.live_server_url)
 		inputbox = self.browser.find_element_by_id('id_new_item')
@@ -148,7 +149,7 @@ class NewVisitorTest(LiveServerTestCase):
 		# Francis acessa a página inicial. Não há nenhum sinal da lista de Edith
 		self.browser.get(self.live_server_url)
 		page_text = self.browser.find_element_by_tag_name('body').text
-		self.assertNotIn('Buy peacock feathers', page_text)
+		self.assertNotIn('1: Buy peacock feathers', page_text)
 		self.assertNotIn('make a fly', page_text)
 
 		# Francis inicia uma nova lista inserindo um item novo. Ele
