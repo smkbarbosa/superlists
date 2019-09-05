@@ -15,8 +15,6 @@ class NewVisitorTest(LiveServerTestCase):
 
 	def tearDown(self):
 		self.browser.quit()
-	
-
 
 	def wait_for_row_in_list_table(self, row_text):
 		start_time = time.time()
@@ -31,11 +29,10 @@ class NewVisitorTest(LiveServerTestCase):
 					raise e
 				time.sleep(0.5)
 
-	# def test_can_start_a_list_and_retrieve_it_later(self):
+	def test_can_start_a_list_and_retrieve_it_later(self):
 		# Edith ouviu falar de uma nova aplicação online interessante para
 		# lista de tarefas. Ela decide verificar sua homepage
 		self.browser.get(self.live_server_url)
-
 
 		# Ela percebe que o título da página e o cabeçalho mencionam listas de
 		# tarefas (to-do)
